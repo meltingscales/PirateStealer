@@ -59,6 +59,7 @@ Doge: `D5yxhkGnMhFPauc9zeARtLdJNp4j7LB87U`
     - Token
 - IP
 - Remove QR Code
+- BetterDiscord Protection Remover
 
 # How to contribute
 For contribute, make a [pull request](https://github.com/Stanley-GF/PirateStealer/pulls) or open an [issue](https://github.com/Stanley-GF/PirateStealer/issues) with your codes
