@@ -12,7 +12,8 @@ I will post soon a new injector that is undetected.
 
 ### You were targeted by this malware
 Sorry but don't come at me since I'm not responsible of what people do with this repo
-Checkout these repos 
+
+Check these repos: 
 - [Asabira](https://github.com/bytixo/Asabira) (Work in Progress atm)
 - [DC-Malware-Detector](https://github.com/bytixo/Discord-Malware-Detector)
 
