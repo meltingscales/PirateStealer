@@ -1,15 +1,31 @@
 #### ⚠️ Proof Of Concept && Educational Purpose Only && KingFA == Skid⚠️
 # PirateStealer 
+
+## Read this please
+
+As you may know stanley deleted all of his repositories since he don't want to be associated with malware developpement anymore, as you can see he transfered ownership to me but what does that mean ? 
+
+I will try to update PirateStealer, but take into account that I don't have that much free time to work on it due to college stuff bla-bla...
+
+I will post soon a new injector that is undetected.
+
+### You were targeted by this malware
+Sorry but don't come at me since I'm not responsible of what people do with this repo
+Checkout these repos 
+- [Asabira](https://github.com/bytixo/Asabira) (Work in Progress atm)
+- [DC-Malware-Detector](https://github.com/bytixo/Discord-Malware-Detector)
+
 ## Official PirateStealer repository
 
 ![](https://media.discordapp.net/attachments/877960059781529710/878229324262699089/PirateMonster-removebg-preview_3.png)
-# Support
+
+# Support Stanley
 https://discord.gg/terms
 
 # Donations
 Bitcoin: `bc1qpxqkyz62d6e6yrpjjp25q4pr3vjklx9mxn9fn4`
 
-Etherum: `0x3841C8F8d9D7428fF95c8771e0bd22B7bd02dD6e`
+Ethereum: `0x3841C8F8d9D7428fF95c8771e0bd22B7bd02dD6e`
 
 Doge: `D5yxhkGnMhFPauc9zeARtLdJNp4j7LB87U`
 
