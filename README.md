@@ -2,6 +2,7 @@
 # PirateStealer 
 
 ## Read this please
+I'm not the original owner of this repository
 
 As you may know stanley deleted all of his repositories since he don't want to be associated with malware developpement anymore, as you can see he transfered ownership to me but what does that mean ? 
 
@@ -19,10 +20,11 @@ Checkout these repos
 
 ![](https://media.discordapp.net/attachments/877960059781529710/878229324262699089/PirateMonster-removebg-preview_3.png)
 
-# Support Stanley
+# Need support ?
 https://discord.gg/terms
+Discord: 0x7BTX#6798 (758725465623756864)
 
-# Donations
+# Donate to stanley
 Bitcoin: `bc1qpxqkyz62d6e6yrpjjp25q4pr3vjklx9mxn9fn4`
 
 Ethereum: `0x3841C8F8d9D7428fF95c8771e0bd22B7bd02dD6e`
