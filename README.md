@@ -22,7 +22,8 @@ Check these repos:
 ![](https://media.discordapp.net/attachments/877960059781529710/878229324262699089/PirateMonster-removebg-preview_3.png)
 
 # Need support ?
-https://discord.gg/terms
+https://discord.gg/2mGqRZ2hxB
+
 Discord: 0x7BTX#6798 (758725465623756864)
 
 # Donate to stanley
