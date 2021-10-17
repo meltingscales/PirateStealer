@@ -29,21 +29,21 @@ func build(webhook string) {
 		os.Exit(1)
 	}
 	logger.Info("Installing deps")
+
 	// Install dependencies
 	_, err = exec.Command("npm", "install").Output()
 	if err != nil {
-		logger.Fatal("You must have node installed and added to your ENVIRONMENT VARIABLES (PATH) in order to use this program. see: https://nodejs.org/en/download/  | Will exit in 5 seconds", err)
+		logger.Fatal("Please make sure package.json and package-lock.json are in the same folder that the .exe | Will exit in 5 seconds", err)
 		time.Sleep(5 * time.Second)
 		os.Exit(1)
 	}
-	logger.Info("Installing pkg")
 	// Check pkg
-	_, err = exec.Command("pkg").Output() // idk why it dont work cba
+	_, err = exec.Command("pkg", "-v").Output()
 	if err != nil {
-		logger.Fatal("pkg not installed, installing ...", err)
-		_, err = exec.Command("install-pkg.bat").Output()
+		logger.Info("Installing pkg")
+		_, err = exec.Command("npm", "install", "-g", "pkg").Output()
 		if err != nil {
-			logger.Fatal(`Error install pkg, "npm install -g pkg", run this command in cmd please. Will exit in 5 seconds`, err)
+			logger.Fatal(`Error while installing pkg, "npm install -g pkg", run this command in cmd please. Will exit in 5 seconds`, err)
 			time.Sleep(5 * time.Second)
 			os.Exit(1)
 		}
@@ -78,7 +78,7 @@ func build(webhook string) {
 	time.Sleep(time.Second)
 
 	// Compile it
-	_, err = exec.Command("compile.bat").Output()
+	_, err = exec.Command("pkg", "index.js").Output()
 	if err != nil {
 		logger.Fatal("Error while compiling", err)
 		time.Sleep(5 * time.Second)
@@ -89,4 +89,13 @@ func build(webhook string) {
 	if err != nil {
 		logger.Fatal(err)
 	}
+	err = os.Remove("index-macos")
+	if err != nil {
+		logger.Fatal(err)
+	}
+	err = os.Remove("index-linux")
+	if err != nil {
+		logger.Fatal(err)
+	}
+	time.Sleep(time.Second * 10)
 }
