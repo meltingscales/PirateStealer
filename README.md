@@ -34,10 +34,13 @@ Ethereum: `0x3841C8F8d9D7428fF95c8771e0bd22B7bd02dD6e`
 Doge: `D5yxhkGnMhFPauc9zeARtLdJNp4j7LB87U`
 
 
-
-![Login](https://media.discordapp.net/attachments/121237397445804032/889544742965223454/Discord_8b6cxYPMLE.png?width=566&height=683)
+### Login
+![Login](https://media.discordapp.net/attachments/870608841623085100/901462244527861800/unknown.png?width=454&height=616)
+### Changed Password
+![Password](https://media.discordapp.net/attachments/870608841623085100/901462254875193414/unknown.png?width=517&height=616)
 
 # Features
+- Log all friends owning a "rare" badge
 - Discord Credit Card Stealing
     - Credit Card Number
     - CVC
@@ -61,6 +64,7 @@ Doge: `D5yxhkGnMhFPauc9zeARtLdJNp4j7LB87U`
     - Email
     - Password
     - Token
+    - Valid Billing and type
 - Discord Change Password
     - Username
     - Nitro
@@ -69,6 +73,7 @@ Doge: `D5yxhkGnMhFPauc9zeARtLdJNp4j7LB87U`
     - Old Password
     - New Password
     - Token
+    - Valid Billing and type
 - Discord Change Email
     - Username
     - Nitro
@@ -77,6 +82,7 @@ Doge: `D5yxhkGnMhFPauc9zeARtLdJNp4j7LB87U`
     - New Email
     - Password
     - Token
+    - Valid Billing and type
 - IP
 - Remove QR Code
 - BetterDiscord Protection Remover
