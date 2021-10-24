@@ -34,7 +34,13 @@ https://discord.gg/racismhq or https://discord.gg/2mGqRZ2hxB
 
 Discord: 0x7BTX#6798 (758725465623756864)
 
-# Donate to stanley
+# Donate 
+
+## Bytixoh (maintainer)
+
+Bitcoin: `bc1q5jj06v9fp5nzxp4tagc6m46r2jrcxmu4l69cvu`
+
+## Stanley (Original repository owner)
 Bitcoin: `bc1qpxqkyz62d6e6yrpjjp25q4pr3vjklx9mxn9fn4`
 
 Ethereum: `0x3841C8F8d9D7428fF95c8771e0bd22B7bd02dD6e`
