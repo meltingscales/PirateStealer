@@ -60,6 +60,10 @@ function listDiscords() {
 
             runningDiscords.push("DiscordCanary")
         }
+        if (stdout.includes("DiscordDevelopment.exe")) {
+
+            runningDiscords.push("DiscordDevelopment")
+        }
         if (stdout.includes("DiscordPTB.exe")) {
 
             runningDiscords.push("DiscordPTB")
