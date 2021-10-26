@@ -1,7 +1,7 @@
 #### ⚠️ Proof Of Concept && Educational Purpose Only ⚠️
 ## Skids hall 
 (changing embed colour and removing PirateStealer mention doesnt make your grabber selfcoded dumbass)
-- [PrimeFA](https://cdn.discordapp.com/attachments/902316110198767626/902427254674563092/partial.js) Thx Hideaki for deobfuscation.
+- [PrimeFA](https://cdn.discordapp.com/attachments/902316110198767626/902427254674563092/partial.js) Thx Hideaki for deobfuscation. Spastic owner thinking that making an api gives hime the right to [sell](https://ibb.co/MfnzJC9) PirateStealer
 - Baba Stealer
 - RapidFA
 - Zerian
