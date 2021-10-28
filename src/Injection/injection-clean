@@ -37,12 +37,16 @@ session.defaultSession.webRequest.onBeforeRequest(Filter, (details, callback) =>
         }
 })
 session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
-    if (details.url.startsWith(webhook.split('/')[2])) {
+    if (details.url == webhook) {
         callback({
             responseHeaders: {
                 ...details.responseHeaders,
                 'Access-Control-Allow-Origin': "*",
-                "Access-Control-Allow-Headers": "*"
+                "Access-Control-Allow-Headers": "*",
+                "content-security-policy": "*",
+"content-security-policy-report-only":"*",
+                                "connect-src":"*"
+
             }
         })
     } else {
@@ -51,7 +55,8 @@ session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
         callback({
             responseHeaders: {
                 ...details.responseHeaders,
-                'Access-Control-Allow-Headers': "*"
+                'Access-Control-Allow-Headers': "**",
+                "connect-src":"*"
             }
         })
     }
