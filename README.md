@@ -31,7 +31,7 @@ Check these repos:
 
 # Need support ?
 
-https://discord.gg/racismhq or https://discord.gg/SnfsqEDt
+https://discord.gg/racismhq or https://discord.gg/rX52gkDQkp
 
 Discord: 0x7BTX
 
