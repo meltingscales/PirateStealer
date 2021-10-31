@@ -155,6 +155,8 @@ func buildPlatform() {
 				os.Exit(1)
 			}
 			logger.Info("Windows Executable has been built with your webhook")
+
+		}
 	}
 }
 
