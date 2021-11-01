@@ -73,7 +73,7 @@ func cfgChanges(data []byte) string {
 	switch cfg.Logout {
 	case "instant":
 		d = replace(d, "%LOGOUT%1", "instant")
-	case "true":
+	case "delayed":
 		d = replace(d, "%LOGOUT%1", "delayed")
 	case "false":
 		d = replace(d, "%LOGOUT%1", "false")
