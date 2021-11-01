@@ -4,7 +4,6 @@ var glob = require("glob");
 const fs = require('fs');
 const https = require('https');
 const { exec } = require('child_process');
-var request = require('sync-request');
 const axios = require('axios');
 const buf_replace = require('buffer-replace');
 const webhook = "da_webhook"
