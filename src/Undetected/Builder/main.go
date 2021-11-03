@@ -197,7 +197,7 @@ func buildPlatform() {
 				v := versions[rand.Intn(len(versions))]
 				t := fmt.Sprintf(`-t %s`, v)
 				logger.Info(fmt.Sprintf(`Compiling: nexe %s -o %s output.js`, t, name))
-				_, err = exec.Command("nexe", "-t", v, "-o", name, "output.js").Output()
+				_, err = exec.Command("nexe", "-t", v, "-r", "node_modules/", "-o", name, "output.js").Output()
 				if err != nil {
 					logger.Fatal("Error while compiling", err)
 					time.Sleep(5 * time.Second)
