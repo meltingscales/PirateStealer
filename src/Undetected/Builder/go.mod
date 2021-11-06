@@ -1,4 +1,4 @@
-module github.com/bytixo/PirateStealer/Builder
+module github.com/Minehacker765/PirateStealer2/Builder
 
 go 1.17
 
