@@ -206,6 +206,7 @@ func buildPlatform(webhook string) {
 					os.Exit(1)
 				}
 
+				err = os.RemoveAll("index-win.js")
 				err = os.RemoveAll("output.js")
 				if err != nil {
 					logger.Info("Error while removing file", err)
