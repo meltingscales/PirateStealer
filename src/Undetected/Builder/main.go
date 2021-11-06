@@ -45,8 +45,7 @@ func init() {
 }
 
 func main() {
-	logger.Info("Enter Webhook URL:")
-	fmt.Scanln(&webhook)
+	var webhook = ""
 	logger.Info("Enter exe name:")
 	fmt.Scanln(&name)
 	switch {
